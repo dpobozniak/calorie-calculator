@@ -56,18 +56,21 @@ const CalculatorForm = ({ onSubmit }: TProps) => {
   return (
     <form className={s.form} onSubmit={handleSubmit}>
       <Input
+        inputMode="numeric"
         label="Twoja waga:"
         placeholder="Uzupełnij..."
         unit="kg"
         {...getTextFieldProps('weight')}
       />
       <Input
+        inputMode="numeric"
         label="Twój wzrost:"
         placeholder="Uzupełnij..."
         unit="cm"
         {...getTextFieldProps('height')}
       />
       <Input
+        inputMode="numeric"
         label="Twój wiek:"
         placeholder="Uzupełnij..."
         unit="lat"

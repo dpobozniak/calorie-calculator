@@ -1,31 +1,98 @@
 .resultContainer {
   margin: 2em 0;
+  text-align: center;
 }
 
 .totalCalories {
   background: #ebebeb;
-  border-radius: 0.2em;
+  border-radius: 0.5rem;
   display: inline-block;
-  font-size: 3em;
-  padding: 0.3em 0.5em;
+  font-size: 3.7em;
+  padding: 0.2em 0.5em;
 }
 
 .totalCalories span {
   font-size: 0.6em;
+  font-weight: 600;
 }
 
 .details {
+  display: inline-block;
   font-size: 1.3em;
   list-style: none;
-  margin: 3em 0;
+  margin: 2.5em 0;
   padding: 0;
+  text-align: left;
 }
 
 .detailsItem {
   margin: 0.3em 0;
 }
 
-.chart {
-  width: 900px;
-  height: 500px;
+.chart svg {
+  width: 100%;
+}
+
+@media (min-width: 45rem) {
+  .resultContainer {
+    display: grid;
+    grid-template-columns: 27rem 1fr;
+    grid-template-rows: auto 1fr;
+    text-align: left;
+  }
+
+  .details {
+    grid-column: 1;
+  }
+
+  .chart {
+    grid-column: 2;
+    grid-row: 1 / 3;
+  }
+
+  .paramsList {
+    grid-column: span 2;
+    text-align: center;
+  }
+}
+
+.paramLabel,
+.paramValue {
+  display: inline-block;
+  font-size: 1.1em;
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+}
+
+.paramLabel {
+  font-weight: bold;
+}
+
+.paramValue {
+  margin-left: 0.3em;
+  margin-right: 1.5em;
+}
+
+/* Buttons */
+.actionButtons {
+  margin: 2em 0;
+  text-align: center;
+}
+
+.actionButton {
+  background: #aaa;
+  border-radius: 0.3em;
+  border: 0 none;
+  color: #fff;
+  font-size: 1.3em;
+  margin: 0 0.5em;
+  padding: 0.4em 1.1em;
+}
+
+.buttonPrimary {
+  background: #046b8d;
+}
+
+.buttonSecondary {
+  background: #dd7016;
 }

@@ -2,6 +2,7 @@ import s from './FormInput.module.css';
 
 type TProps = {
   errorMessage?: string;
+  inputMode?: 'numeric' | 'decimal';
   label: string;
   name: string;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
@@ -12,6 +13,7 @@ type TProps = {
 
 const FormInput = ({
   errorMessage,
+  inputMode,
   label,
   name,
   onChange,
@@ -31,6 +33,7 @@ const FormInput = ({
         name={name}
         onChange={onChange}
         placeholder={placeholder}
+        inputMode={inputMode}
       />
       {unit && (
         <span className={s.unitWrapper}>
