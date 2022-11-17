@@ -4,21 +4,9 @@ import Radio from 'components/FormInput/FormRadio';
 import useForm from 'hooks/useForm';
 import validate from './validate';
 import { TFormElements } from './types';
+import { activityOptions, genderOptions } from './config';
 
 import s from './Form.module.css';
-
-const activityOptions = [
-  { value: '1.20', label: 'Prawie brak' },
-  { value: '1.40', label: 'Lekka aktywność' },
-  { value: '1.60', label: 'Umiarkowana aktywność' },
-  { value: '1.80', label: 'Duża aktywność' },
-  { value: '2.00', label: 'Bardzo duża aktywność' },
-];
-
-const genderOptions = [
-  { value: 'female', label: 'Kobieta' },
-  { value: 'male', label: 'Mężczyzna' },
-];
 
 const initialValues = {
   activity: activityOptions[0].value,
@@ -28,9 +16,15 @@ const initialValues = {
   weight: '',
 };
 
-const CalculatorForm = () => {
+type TProps = {
+  onSubmit: (values: TFormElements) => void;
+};
+
+const CalculatorForm = ({ onSubmit }: TProps) => {
   const handleOnSubmit = (isValid: boolean) => {
-    console.log('----values', formValues);
+    if (isValid) {
+      onSubmit(formValues);
+    }
   };
 
   const {
@@ -84,6 +78,7 @@ const CalculatorForm = () => {
         {...getTextFieldProps('gender')}
         options={genderOptions}
         selected={formValues.gender}
+        className={s.radioOption}
       />
       <Select
         label="Aktywność fizyczna:"

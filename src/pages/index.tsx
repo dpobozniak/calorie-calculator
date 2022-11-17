@@ -1,23 +1,31 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 
-import ContactForm from 'components/Calculator/Form';
+import Layout from 'components/Layout/Layout';
+import Header from 'components/Header/Header';
+import Calculator from 'components/Calculator/Calculator';
 
 import s from 'styles/Home.module.css';
 
 const Home: NextPage = () => {
+  const router = useRouter();
+
   return (
-    <div className={s.container}>
+    <Layout>
       <Head>
         <title>Kalkulator kalorii</title>
         <meta name="description" content="" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <h2>Kalkulator kalorii</h2>
-      <p>Sprawdź swoje zapotrzebowanie kaloryczne (BMR)</p>
-      <ContactForm />
-    </div>
+      <Header
+        title="Kalkulator kalorii"
+        slogan="Sprawdź swoje zapotrzebowanie kaloryczne"
+      />
+
+      <Calculator />
+    </Layout>
   );
 };
 

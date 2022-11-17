@@ -1,0 +1,21 @@
+.header {
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+}
+
+.mainTitle {
+  font-size: 2.6rem;
+  margin: 2em 0 0.3em;
+}
+
+.mainSlogan {
+  font-size: 1.4rem;
+}
+
+.logo {
+  background: rgba(0, 0, 0, 0.3);
+  left: 0;
+  position: absolute;
+  top: 0;
+}

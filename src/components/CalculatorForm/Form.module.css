@@ -5,14 +5,25 @@
   gap: 1.4em 3em;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  margin: 1em auto;
   max-width: 38rem;
 }
 
+.radioOption {
+  align-self: end;
+  margin-bottom: 0.6em;
+}
+
+.radioOption legend {
+  display: none;
+}
+
 .submitButton {
+  align-self: end;
   background: var(--primary-color);
   border-radius: var(--input-radius);
   border: 0 none;
   color: #fff;
   font-size: 1.2em;
-  padding: 0.9em;
+  padding: 0.7em 0.9em;
 }

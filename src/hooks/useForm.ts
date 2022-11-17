@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef, ChangeEvent, FormEvent } from 'react';
 
-const markEveryPropertyValue = <T>(ob: T) =>
+const markEveryPropertyValue = <T extends {}>(ob: T) =>
   Object.keys(ob).reduce(
     (acc, val) => ({
       ...acc,

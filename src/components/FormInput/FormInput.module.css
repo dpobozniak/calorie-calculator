@@ -37,6 +37,10 @@
   accent-color: var(--primary-color);
 }
 
+.radioOption {
+  margin-right: 1em;
+}
+
 .unitWrapper {
   align-items: center;
   background: #aaa;

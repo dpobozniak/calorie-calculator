@@ -1,6 +1,7 @@
 import s from './FormInput.module.css';
 
 type TProps = {
+  className?: string;
   errorMessage?: string;
   label: string;
   name: string;
@@ -13,6 +14,7 @@ type TProps = {
 };
 
 const FormSelect = ({
+  className,
   errorMessage,
   label,
   name,
@@ -20,10 +22,10 @@ const FormSelect = ({
   options,
   selected,
 }: TProps) => (
-  <fieldset className={s.wrapper}>
+  <fieldset className={`${s.wrapper} ${className ? className : undefined}`}>
     <legend className={s.label}>{label}</legend>
     {options.map(({ label, value }) => (
-      <span key={value}>
+      <span key={value} className={s.radioOption}>
         <input
           type="radio"
           className={s.radio}
