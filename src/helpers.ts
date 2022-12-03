@@ -1,6 +1,7 @@
-import { TCalculatorParams } from 'types/calculatorParams';
+import type { TCalculatorParams } from 'types/calculatorParams';
+import type { TFormulaResult } from 'types/formulaResult';
 
-export const calorieFormula = (params: TCalculatorParams) => {
+export const calorieFormula = (params: TCalculatorParams): TFormulaResult => {
   const { activity, height, weight, age, gender } = params;
   // men BMR = 66.5 + (13.75 * weight in kg) + (5.003 * height in cm) - (6.75 * age)
   // women: BMR = 655.1 + (9.563 * weight in kg) + (1.850 * height in cm) - (4.676 * age)
