@@ -1,4 +1,11 @@
+.wrapper {
+  flex-direction: column;
+  display: flex;
+  min-height: 100vh;
+}
+
 .container {
+  flex: 1;
   margin: 0 auto;
   max-width: 70rem;
   padding: 0 1rem;
