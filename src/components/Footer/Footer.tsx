@@ -6,7 +6,7 @@ import s from './Footer.module.css';
 const Footer: FC = () => (
   <footer className={s.footer}>
     <div className={s.container}>
-      <Image src="/logo_nolimit.png" height={90} width={90} alt="No limit" />
+      <Image src="/logo_nolimit.svg" height={90} width={90} alt="No limit" />
       <section className={s.linkSection}>
         <h3 className={s.linkSectionTitle}>Lorem ipsum</h3>
         <ul className={s.linkSectionList}>

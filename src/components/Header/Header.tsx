@@ -10,7 +10,7 @@ type TProps = {
 const Header = ({ title, slogan }: TProps) => (
   <header className={s.header}>
     <span className={s.logo}>
-      <Image src="/logo_nolimit.png" height={90} width={90} alt="No limit" />
+      <Image src="/logo_nolimit.svg" height={100} width={100} alt="No limit" />
     </span>
     <h1 className={s.mainTitle}>{title}</h1>
     <p className={s.mainSlogan}>{slogan}</p>

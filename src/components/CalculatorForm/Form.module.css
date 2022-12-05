@@ -4,9 +4,7 @@
 
   gap: 1.4em 3em;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  margin: 1em auto 3em;
-  max-width: 38rem;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
 }
 
 .radioOption {

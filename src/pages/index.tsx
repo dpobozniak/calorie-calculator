@@ -24,7 +24,9 @@ const Home: NextPage = () => {
         slogan="Sprawdź swoje zapotrzebowanie kaloryczne"
       />
 
-      <Calculator />
+      <div className={s.calculatorContainer}>
+        <Calculator />
+      </div>
 
       <h2>Lorem ipsum</h2>
       <p>
