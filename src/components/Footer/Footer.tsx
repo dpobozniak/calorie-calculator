@@ -1,12 +1,12 @@
 import { FC } from 'react';
-import Image from 'next/image';
+import Logo from 'components/Logo/NoLimit';
 
 import s from './Footer.module.css';
 
 const Footer: FC = () => (
   <footer className={s.footer}>
     <div className={s.container}>
-      <Image src="/logo_nolimit.svg" height={90} width={90} alt="No limit" />
+      <Logo size={90} />
       <section className={s.linkSection}>
         <h3 className={s.linkSectionTitle}>Lorem ipsum</h3>
         <ul className={s.linkSectionList}>

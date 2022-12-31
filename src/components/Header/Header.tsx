@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Logo from 'components/Logo/NoLimit';
 
 import s from './Header.module.css';
 
@@ -10,7 +10,7 @@ type TProps = {
 const Header = ({ title, slogan }: TProps) => (
   <header className={s.header}>
     <span className={s.logo}>
-      <Image src="/logo_nolimit.svg" height={100} width={100} alt="No limit" />
+      <Logo size={100} />
     </span>
     <h1 className={s.mainTitle}>{title}</h1>
     <p className={s.mainSlogan}>{slogan}</p>

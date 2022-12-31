@@ -28,3 +28,9 @@
 .linkSectionItem {
   margin: 0.4em 0;
 }
+
+@media print {
+  .footer {
+    display: none;
+  }
+}

@@ -40,10 +40,9 @@
   width: 100% !important;
 }
 
-@media (min-width: 45rem) {
+@media print, (min-width: 45rem) {
   .resultContainer {
     display: grid;
-    grid-template-columns: 27rem 1fr;
     grid-template-rows: auto 1fr;
     text-align: left;
   }
@@ -102,4 +101,15 @@
 
 .buttonSecondary {
   background: #dd7016;
+}
+
+.disclaimer {
+  color: #5c5a5a;
+  font-size: 0.85em;
+}
+
+@media print {
+  .actionButtons {
+    display: none;
+  }
 }

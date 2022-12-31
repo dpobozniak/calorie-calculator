@@ -20,6 +20,10 @@ import s from 'styles/Result.module.css';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
+const handlePrint = () => {
+  window.print();
+};
+
 const Result: NextPage = () => {
   const router = useRouter();
   const { activity, age, gender, height, weight } = router.query;
@@ -57,6 +61,7 @@ const Result: NextPage = () => {
           borderWidth: 15,
         },
       },
+
       plugins: {
         legend: {
           labels: {
@@ -138,6 +143,7 @@ const Result: NextPage = () => {
         <button
           type="button"
           className={`${s.actionButton} ${s.buttonPrimary}`}
+          onClick={handlePrint}
         >
           Drukuj
         </button>
@@ -145,7 +151,7 @@ const Result: NextPage = () => {
           <a className={`${s.actionButton} ${s.buttonSecondary}`}>Ponów</a>
         </Link>
       </div>
-      <p>
+      <p className={s.disclaimer}>
         Są to orientacyjne wyliczenia, które mogą różnić się u poszczególnych
         osób ze względu na indywidualne cechy i parametry dodatkowe.
       </p>
