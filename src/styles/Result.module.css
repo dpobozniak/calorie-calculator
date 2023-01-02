@@ -108,6 +108,11 @@
   font-size: 0.85em;
 }
 
+.qrCode {
+  float: right;
+  margin-left: 2em;
+}
+
 @media print {
   .actionButtons {
     display: none;

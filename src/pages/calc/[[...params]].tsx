@@ -1,6 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import type { ChartOptions, ChartData } from 'chart.js';
@@ -155,7 +156,11 @@ const Result: NextPage = () => {
         Są to orientacyjne wyliczenia, które mogą różnić się u poszczególnych
         osób ze względu na indywidualne cechy i parametry dodatkowe.
       </p>
+
       <h2>Lorem ipsum</h2>
+      <span className={s.qrCode}>
+        <Image src="/qrcode.jpg" width="140" height="140" alt="" />
+      </span>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eleifend,
         lacus quis maximus accumsan, eros metus varius metus, at elementum velit
@@ -168,9 +173,6 @@ const Result: NextPage = () => {
         urna erat. Proin leo odio, condimentum ut dolor id, luctus tempor augue.
         Aenean turpis orci, laoreet non vehicula ac, suscipit nec arcu. Integer
         tristique magna sit amet turpis egestas, eu laoreet turpis vulputate.
-        Nullam varius et lectus sed sagittis. Sed eu velit non turpis ultricies
-        lacinia. Curabitur risus mauris, interdum ac lacinia eu, luctus eu
-        lacus.
       </p>
     </Layout>
   );
