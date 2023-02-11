@@ -1,8 +1,3 @@
-export type TFormElements = {
-  activity: string;
-  age: string;
-  gender: string;
-  height: string;
-  target: string;
-  weight: string;
-};
+import type { TCalculatorParams } from 'types/calculatorParams';
+
+export type TFormElements = Record<keyof TCalculatorParams, string>;

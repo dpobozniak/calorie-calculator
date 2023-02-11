@@ -1,5 +1,6 @@
 import type { TCalculatorParams } from 'types/calculatorParams';
 import type { TFormulaResult } from 'types/formulaResult';
+import { nutritionRatio } from 'components/CalculatorForm/config';
 
 export const calorieFormula = (params: TCalculatorParams): TFormulaResult => {
   const { activity, height, weight, age, gender, target } = params;
@@ -16,9 +17,9 @@ export const calorieFormula = (params: TCalculatorParams): TFormulaResult => {
   }
 
   const totalCalories = Math.ceil(BMR * activity);
-  const proteinCalories = Math.ceil(totalCalories * 0.15);
-  const carboCalories = Math.ceil(totalCalories * 0.55);
-  const fatCalories = Math.ceil(totalCalories * 0.3);
+  const proteinCalories = Math.ceil(totalCalories * nutritionRatio.protein);
+  const carboCalories = Math.ceil(totalCalories * nutritionRatio.carbo);
+  const fatCalories = Math.ceil(totalCalories * nutritionRatio.fat);
 
   return {
     totalCalories,

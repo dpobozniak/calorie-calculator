@@ -5,8 +5,8 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import type { ChartOptions, ChartData } from 'chart.js';
-
 import { Doughnut } from 'react-chartjs-2';
+
 import type { TFormulaResult } from 'types/formulaResult';
 
 import Layout from 'components/Layout/Layout';
@@ -15,6 +15,7 @@ import { calorieFormula } from 'helpers';
 import {
   activityOptions,
   genderOptions,
+  nutritionRatio,
   targetOptions,
 } from 'components/CalculatorForm/config';
 
@@ -108,15 +109,16 @@ const Result: NextPage = () => {
         </div>
         <ul className={s.details}>
           <li className={s.detailsItem}>
-            <b>15% białka:</b> {result?.protein.cal} kcal = {result?.protein.g}{' '}
-            g
+            <b>{nutritionRatio.protein * 100}% białka:</b> {result?.protein.cal}{' '}
+            kcal = {result?.protein.g} g
           </li>
           <li className={s.detailsItem}>
-            <b>55% węglowodanów:</b> {result?.carbo.cal} kcal ={' '}
-            {result?.carbo.g} g
+            <b>{nutritionRatio.carbo * 100}% węglowodanów:</b>{' '}
+            {result?.carbo.cal} kcal = {result?.carbo.g} g
           </li>
           <li className={s.detailsItem}>
-            <b>30% tłuszczu:</b> {result?.fat.cal} kcal = {result?.fat.g} g
+            <b>{nutritionRatio.fat * 100}% tłuszczu:</b> {result?.fat.cal} kcal
+            = {result?.fat.g} g
           </li>
         </ul>
 

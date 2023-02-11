@@ -16,3 +16,9 @@ export const targetOptions = [
   { value: '-0.1', label: 'Chcę schudnąć' },
   { value: '0.1', label: 'Chcę przytyć' },
 ];
+
+export const nutritionRatio = {
+  carbo: 0.4,
+  fat: 0.3,
+  protein: 0.3,
+};
