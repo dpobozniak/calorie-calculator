@@ -10,3 +10,9 @@ export const genderOptions = [
   { value: 'female', label: 'Kobieta' },
   { value: 'male', label: 'Mężczyzna' },
 ];
+
+export const targetOptions = [
+  { value: '0', label: 'Chcę utrzymać wagę' },
+  { value: '-0.1', label: 'Chcę schudnąć' },
+  { value: '0.1', label: 'Chcę przytyć' },
+];

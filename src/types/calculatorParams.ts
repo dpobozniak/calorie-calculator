@@ -3,5 +3,6 @@ export type TCalculatorParams = {
   age: number;
   gender: string;
   height: number;
+  target: number;
   weight: number;
 };

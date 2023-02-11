@@ -4,7 +4,7 @@ import Radio from 'components/FormInput/FormRadio';
 import useForm from 'hooks/useForm';
 import validate from './validate';
 import { TFormElements } from './types';
-import { activityOptions, genderOptions } from './config';
+import { activityOptions, genderOptions, targetOptions } from './config';
 
 import s from './Form.module.css';
 
@@ -13,6 +13,7 @@ const initialValues = {
   age: '',
   gender: '',
   height: '',
+  target: targetOptions[0].value,
   weight: '',
 };
 
@@ -89,6 +90,13 @@ const CalculatorForm = ({ onSubmit }: TProps) => {
         onChange={handleOnSelectChange('activity')}
         options={activityOptions}
         selected={formValues.activity}
+      />
+      <Select
+        label="Twój cel:"
+        {...getTextFieldProps('target')}
+        onChange={handleOnSelectChange('target')}
+        options={targetOptions}
+        selected={formValues.target}
       />
       <button type="submit" className={s.submitButton}>
         Oblicz

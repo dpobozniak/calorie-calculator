@@ -13,8 +13,9 @@ import Layout from 'components/Layout/Layout';
 import Header from 'components/Header/Header';
 import { calorieFormula } from 'helpers';
 import {
-  genderOptions,
   activityOptions,
+  genderOptions,
+  targetOptions,
 } from 'components/CalculatorForm/config';
 
 import s from 'styles/Result.module.css';
@@ -27,7 +28,7 @@ const handlePrint = () => {
 
 const Result: NextPage = () => {
   const router = useRouter();
-  const { activity, age, gender, height, weight } = router.query;
+  const { activity, age, gender, height, target, weight } = router.query;
   let result: TFormulaResult | null = null;
   let chartData: ChartData<'doughnut'> | null = null;
   let chartOptions: ChartOptions | null = null;
@@ -38,6 +39,7 @@ const Result: NextPage = () => {
       age: Number(age),
       gender: gender as string,
       height: Number(height),
+      target: Number(target),
       weight: Number(weight),
     });
   }
@@ -138,6 +140,10 @@ const Result: NextPage = () => {
         <dt className={s.paramLabel}>Aktywność:</dt>
         <dd className={s.paramValue}>
           {activityOptions.find((item) => item.value === activity)?.label}
+        </dd>
+        <dt className={s.paramLabel}>Cel:</dt>
+        <dd className={s.paramValue}>
+          {targetOptions.find((item) => item.value === target)?.label}
         </dd>
       </dl>
       <div className={s.actionButtons}>
