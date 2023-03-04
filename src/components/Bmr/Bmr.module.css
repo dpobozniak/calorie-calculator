@@ -1,0 +1,16 @@
+.bmr {
+  margin: 2rem 0 3rem 0;
+}
+
+.title {
+  text-align: center;
+}
+
+.text {
+  text-align: justify;
+}
+
+.qrCode {
+  float: right;
+  margin-left: 5%;
+}

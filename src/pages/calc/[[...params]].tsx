@@ -9,6 +9,7 @@ import { Doughnut } from 'react-chartjs-2';
 
 import type { TFormulaResult } from 'types/formulaResult';
 
+import Bmr from 'components/Bmr/Bmr';
 import Layout from 'components/Layout/Layout';
 import Header from 'components/Header/Header';
 import { calorieFormula } from 'helpers';
@@ -161,27 +162,12 @@ const Result: NextPage = () => {
         </Link>
       </div>
       <p className={s.disclaimer}>
-        Są to orientacyjne wyliczenia, które mogą różnić się u poszczególnych
-        osób ze względu na indywidualne cechy i parametry dodatkowe.
+        Podane wyniki to orientacyjne wyliczenia, które mogą różnić się u
+        poszczególnych osób ze względu na indywidualne cechy i parametry
+        dodatkowe.
       </p>
 
-      <h2>Lorem ipsum</h2>
-      <span className={s.qrCode}>
-        <Image src="/qrcode.jpg" width="140" height="140" alt="" />
-      </span>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eleifend,
-        lacus quis maximus accumsan, eros metus varius metus, at elementum velit
-        neque non turpis. Phasellus pretium, nisl vel varius sollicitudin, nulla
-        nulla fermentum ex, at porttitor enim nunc et metus. Duis id tempor
-        erat. Praesent euismod ut nibh in sollicitudin. Nullam ante massa,
-        mattis eu eros sit amet, bibendum interdum massa. Cras tristique, arcu
-        et posuere mollis, metus libero sodales eros, eget eleifend velit sapien
-        a odio. Vestibulum id sodales ante, sit amet laoreet dui. Praesent id
-        urna erat. Proin leo odio, condimentum ut dolor id, luctus tempor augue.
-        Aenean turpis orci, laoreet non vehicula ac, suscipit nec arcu. Integer
-        tristique magna sit amet turpis egestas, eu laoreet turpis vulputate.
-      </p>
+      <Bmr />
     </Layout>
   );
 };

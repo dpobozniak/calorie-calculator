@@ -2,6 +2,7 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
+import Bmr from 'components/Bmr/Bmr';
 import Layout from 'components/Layout/Layout';
 import Header from 'components/Header/Header';
 import Calculator from 'components/Calculator/Calculator';
@@ -28,40 +29,20 @@ const Home: NextPage = () => {
         <Calculator />
       </div>
 
-      <h2>Lorem ipsum</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eleifend,
-        lacus quis maximus accumsan, eros metus varius metus, at elementum velit
-        neque non turpis. Phasellus pretium, nisl vel varius sollicitudin, nulla
-        nulla fermentum ex, at porttitor enim nunc et metus. Duis id tempor
-        erat. Praesent euismod ut nibh in sollicitudin. Nullam ante massa,
-        mattis eu eros sit amet, bibendum interdum massa. Cras tristique, arcu
-        et posuere mollis, metus libero sodales eros, eget eleifend velit sapien
-        a odio. Vestibulum id sodales ante, sit amet laoreet dui. Praesent id
-        urna erat. Proin leo odio, condimentum ut dolor id, luctus tempor augue.
-        Aenean turpis orci, laoreet non vehicula ac, suscipit nec arcu. Integer
-        tristique magna sit amet turpis egestas, eu laoreet turpis vulputate.
-        Nullam varius et lectus sed sagittis. Sed eu velit non turpis ultricies
-        lacinia. Curabitur risus mauris, interdum ac lacinia eu, luctus eu
-        lacus.
-      </p>
-      <h2>Lorem ipsum</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eleifend,
-        lacus quis maximus accumsan, eros metus varius metus, at elementum velit
-        neque non turpis. Phasellus pretium, nisl vel varius sollicitudin, nulla
-        nulla fermentum ex, at porttitor enim nunc et metus. Duis id tempor
-        erat. Praesent euismod ut nibh in sollicitudin. Nullam ante massa,
-        mattis eu eros sit amet, bibendum interdum massa. Cras tristique, arcu
-        et posuere mollis, metus libero sodales eros, eget eleifend velit sapien
-        a odio. Vestibulum id sodales ante, sit amet laoreet dui. Praesent id
-        urna erat. Proin leo odio, condimentum ut dolor id, luctus tempor augue.
-        Aenean turpis orci, laoreet non vehicula ac, suscipit nec arcu. Integer
-        tristique magna sit amet turpis egestas, eu laoreet turpis vulputate.
-        Nullam varius et lectus sed sagittis. Sed eu velit non turpis ultricies
-        lacinia. Curabitur risus mauris, interdum ac lacinia eu, luctus eu
-        lacus.
-      </p>
+      <Bmr />
+
+      <section className={s.info}>
+        <h3 className={s.title}>Pamiętaj!</h3>
+        <p>
+          Prezentowane wyliczenia w kalkulatorze kalorii mają charakter
+          orientacyjny, a sama dieta to oczywiście nie wszystko! Potrzebujesz
+          jeszcze dopasowanego planu treningowego.{' '}
+          <strong>
+            Oblicz swoje zapotrzebowanie, a na stronie wyników otrzymasz
+            dodatkowe Bonusy.
+          </strong>
+        </p>
+      </section>
     </Layout>
   );
 };
