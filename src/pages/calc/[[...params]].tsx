@@ -1,8 +1,10 @@
-import type { NextPage } from 'next';
+import type {
+  NextPage,
+  GetServerSideProps,
+  InferGetServerSidePropsType,
+} from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
-import Image from 'next/image';
-import { useRouter } from 'next/router';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import type { ChartOptions, ChartData } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
@@ -19,6 +21,7 @@ import {
   nutritionRatio,
   targetOptions,
 } from 'components/CalculatorForm/config';
+import type { TFormElements } from 'components/CalculatorForm/types';
 
 import s from 'styles/Result.module.css';
 
@@ -28,66 +31,49 @@ const handlePrint = () => {
   window.print();
 };
 
-const Result: NextPage = () => {
-  const router = useRouter();
-  const { activity, age, gender, height, target, weight } = router.query;
-  let result: TFormulaResult | null = null;
-  let chartData: ChartData<'doughnut'> | null = null;
-  let chartOptions: ChartOptions | null = null;
+const Result: NextPage<
+  InferGetServerSidePropsType<typeof getServerSideProps>
+> = ({ result, params }) => {
+  let chartData: ChartData<'doughnut'> = {
+    labels: ['Białko', 'Węglowodany', 'Tluszcze'],
+    datasets: [
+      {
+        data: [result.protein.g, result.carbo.g, result.fat.g],
+        backgroundColor: ['#00a1ab', '#046b8d', '#01cdda'],
+        borderWidth: 10,
+        rotation: -30,
+        hoverOffset: 4,
+      },
+    ],
+  };
 
-  if (router.query.activity) {
-    result = calorieFormula({
-      activity: Number(activity),
-      age: Number(age),
-      gender: gender as string,
-      height: Number(height),
-      target: Number(target),
-      weight: Number(weight),
-    });
-  }
+  let chartOptions: ChartOptions = {
+    elements: {
+      arc: {
+        borderWidth: 15,
+      },
+    },
 
-  if (result !== null) {
-    chartData = {
-      labels: ['Białko', 'Węglowodany', 'Tluszcze'],
-      datasets: [
-        {
-          data: [result.protein.g, result.carbo.g, result.fat.g],
-          backgroundColor: ['#00a1ab', '#046b8d', '#01cdda'],
-          borderWidth: 10,
-          rotation: -30,
-          hoverOffset: 4,
+    plugins: {
+      legend: {
+        labels: {
+          boxHeight: 30,
+          borderRadius: 10,
+          useBorderRadius: false,
+          font: { size: 16 },
         },
-      ],
-    };
-
-    chartOptions = {
-      elements: {
-        arc: {
-          borderWidth: 15,
-        },
+        onClick: () => {},
       },
 
-      plugins: {
-        legend: {
-          labels: {
-            boxHeight: 30,
-            borderRadius: 10,
-            useBorderRadius: false,
-            font: { size: 16 },
-          },
-          onClick: () => {},
-        },
-
-        tooltip: {
-          displayColors: false,
-          backgroundColor: '#0c3a6f',
-          callbacks: {
-            label: (item) => `${item.formattedValue} g`,
-          },
+      tooltip: {
+        displayColors: false,
+        backgroundColor: '#0c3a6f',
+        callbacks: {
+          label: (item) => `${item.formattedValue} g`,
         },
       },
-    };
-  }
+    },
+  };
 
   return (
     <Layout>
@@ -132,21 +118,24 @@ const Result: NextPage = () => {
       <dl className={s.paramsList}>
         <dt className={s.paramLabel}>Płeć:</dt>
         <dd className={s.paramValue}>
-          {genderOptions.find((item) => item.value === gender)?.label}
+          {genderOptions.find((item) => item.value === params.gender)?.label}
         </dd>
         <dt className={s.paramLabel}>Waga:</dt>
-        <dd className={s.paramValue}>{weight} kg</dd>
+        <dd className={s.paramValue}>{params.weight} kg</dd>
         <dt className={s.paramLabel}>Wzrost:</dt>
-        <dd className={s.paramValue}>{height} cm</dd>
+        <dd className={s.paramValue}>{params.height} cm</dd>
         <dt className={s.paramLabel}>Wiek:</dt>
-        <dd className={s.paramValue}>{age} lat</dd>
+        <dd className={s.paramValue}>{params.age} lat</dd>
         <dt className={s.paramLabel}>Aktywność:</dt>
         <dd className={s.paramValue}>
-          {activityOptions.find((item) => item.value === activity)?.label}
+          {
+            activityOptions.find((item) => item.value === params.activity)
+              ?.label
+          }
         </dd>
         <dt className={s.paramLabel}>Cel:</dt>
         <dd className={s.paramValue}>
-          {targetOptions.find((item) => item.value === target)?.label}
+          {targetOptions.find((item) => item.value === params.target)?.label}
         </dd>
       </dl>
       <div className={s.actionButtons}>
@@ -170,6 +159,49 @@ const Result: NextPage = () => {
       <Bmr />
     </Layout>
   );
+};
+
+type TProps = {
+  result: TFormulaResult;
+  params: TFormElements;
+};
+
+export const getServerSideProps: GetServerSideProps<TProps> = async ({
+  query,
+}) => {
+  const { activity, age, gender, height, target, weight } = query;
+
+  const result = calorieFormula({
+    activity: Number(activity),
+    age: Number(age),
+    gender: gender as string,
+    height: Number(height),
+    target: Number(target),
+    weight: Number(weight),
+  });
+
+  if (!result) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false,
+      },
+    };
+  }
+
+  return {
+    props: {
+      result,
+      params: {
+        activity: activity as string,
+        age: age as string,
+        gender: gender as string,
+        height: height as string,
+        target: target as string,
+        weight: weight as string,
+      },
+    },
+  };
 };
 
 export default Result;
