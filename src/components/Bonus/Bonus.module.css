@@ -1,0 +1,90 @@
+.wrapper {
+  border-top: 1px dashed #aaa;
+  margin-top: 4rem;
+  padding-top: 1rem;
+  text-align: center;
+}
+
+@media print {
+  .wrapper {
+    display: none;
+  }
+}
+
+.title {
+  font-size: clamp(2.6em, 6vw, 3.1em);
+  line-height: 1.2;
+  margin: 0.5em 0;
+}
+
+.subtitle {
+  font-size: clamp(1.5em, 4vw, 2em);
+}
+
+.subtitle1 {
+  font-size: 1.5em;
+}
+
+.whatYouNeed {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em 1em;
+  justify-content: space-around;
+  list-style: none;
+  margin: 0 auto 3em;
+  padding: 0;
+  max-width: 760px;
+}
+
+.whatYouNeed li {
+  width: 170px;
+}
+
+.whatYouNeed li a {
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: 130px;
+  display: block;
+  padding-top: 145px;
+  transition: background-size ease-out 0.3s;
+}
+
+.whatYouNeed li a:hover {
+  background-size: 140px;
+}
+
+.whatYouNeed li:nth-child(1) a {
+  background-image: url('/graf_1.jpg');
+}
+
+.whatYouNeed li:nth-child(2) a {
+  background-image: url('/graf_2.jpg');
+}
+
+.whatYouNeed li:nth-child(3) a {
+  background-image: url('/graf_3.jpg');
+}
+
+.whatYouNeed li:nth-child(4) a {
+  background-image: url('/graf_4.jpg');
+}
+
+.banners {
+  display: grid;
+  gap: 2em;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  margin-bottom: 3em;
+  margin-top: 2em;
+}
+
+.banners img {
+  transition: opacity ease-out 0.3s;
+}
+
+.banners a:hover img {
+  opacity: 0.8;
+}
+
+.ctaWrapper {
+  margin-top: 3rem;
+}

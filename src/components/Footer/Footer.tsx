@@ -150,7 +150,7 @@ const Footer: FC = () => (
       </div>
       <p>
         NO LIMIT® by FITGENERATOR® 2017-2023 | Nazwy NO LIMIT, FITGENERATOR, są
-        chronionymi znakami towarowymi. Wszystkie prawa zastrzeżone
+        chronionymi znakami towarowymi. Wszystkie prawa zastrzeżone.
       </p>
     </div>
   </footer>

@@ -40,7 +40,8 @@
   width: 100% !important;
 }
 
-@media print, (min-width: 45rem) {
+@media print,
+(min-width: 45rem) {
   .resultContainer {
     display: grid;
     grid-template-rows: auto 1fr;
@@ -83,24 +84,6 @@
 .actionButtons {
   margin: 2em 0;
   text-align: center;
-}
-
-.actionButton {
-  background: #aaa;
-  border-radius: 0.3em;
-  border: 0 none;
-  color: #fff;
-  font-size: 1.3em;
-  margin: 0 0.5em;
-  padding: 0.4em 1.1em;
-}
-
-.buttonPrimary {
-  background: #046b8d;
-}
-
-.buttonSecondary {
-  background: #dd7016;
 }
 
 .disclaimer {

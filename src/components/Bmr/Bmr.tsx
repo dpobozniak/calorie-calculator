@@ -10,14 +10,14 @@ const Bmr = () => (
     </span>
     <p className={s.text}>
       Dzięki kalkulatorowi przemiany materii{' '}
-      <strong>BMR (Basal Metabolic Rate)</strong>
-      wstępnie oszacujesz jaka ilość kalorii jest potrzebna Twojemu organizmowi
-      w uzyskaniu konkretnych celów. W zależności od tego czy np. chcesz się
-      odchudzać, czy budować masę mięśniową, kalkulator wyliczy zapotrzebowanie
-      kaloryczne, które możesz sobie zapisać, lub wydrukować, by dobrać
-      odpowiednią dietę i jeszcze skuteczniej dążyć do wyznaczonego celu.
-      Dodatkowo uzyskasz wstępne szacunki zapotrzebowania na białko, węglowodany
-      oraz tłuszcze.{' '}
+      <strong>BMR (Basal Metabolic Rate)</strong> wstępnie oszacujesz jaka ilość
+      kalorii jest potrzebna Twojemu organizmowi w uzyskaniu konkretnych celów.
+      W zależności od tego czy np. chcesz się odchudzać, czy budować masę
+      mięśniową, kalkulator wyliczy zapotrzebowanie kaloryczne, które możesz
+      sobie zapisać, lub wydrukować, by dobrać odpowiednią dietę i jeszcze
+      skuteczniej dążyć do wyznaczonego celu. Dodatkowo uzyskasz wstępne
+      szacunki zapotrzebowania na białko, węglowodany oraz tłuszcze.
+      <br />
       <strong>
         Oblicz zapotrzebowanie kaloryczne odpowiednie dla Ciebie i zacznij
         działać!

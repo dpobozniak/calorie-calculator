@@ -24,6 +24,8 @@ import {
 import type { TFormElements } from 'components/CalculatorForm/types';
 
 import s from 'styles/Result.module.css';
+import Bonus from 'components/Bonus/Bonus';
+import Button from 'components/Button/Button';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -139,16 +141,12 @@ const Result: NextPage<
         </dd>
       </dl>
       <div className={s.actionButtons}>
-        <button
-          type="button"
-          className={`${s.actionButton} ${s.buttonPrimary}`}
-          onClick={handlePrint}
-        >
+        <Button color="#046b8d" onClick={handlePrint}>
           Drukuj
-        </button>
-        <Link href="/">
-          <a className={`${s.actionButton} ${s.buttonSecondary}`}>Ponów</a>
-        </Link>
+        </Button>
+        <Button href="/" color="#dd7016">
+          Ponów
+        </Button>
       </div>
       <p className={s.disclaimer}>
         Podane wyniki to orientacyjne wyliczenia, które mogą różnić się u
@@ -157,6 +155,18 @@ const Result: NextPage<
       </p>
 
       <Bmr />
+
+      <p>
+        Przepisy na smaczne posiłki (śniadania, obiady, kolacje, przekąski) z
+        podziałem na różne zapotrzebowanie kaloryczne znajdziesz na platformie
+        NO LIMIT DIETA
+      </p>
+
+      {/* <Button external href="https://nolimitdieta.pl" color="#0C642D">
+        Przejdź na platformę NO LIMIT DIETA
+      </Button> */}
+
+      <Bonus />
     </Layout>
   );
 };
