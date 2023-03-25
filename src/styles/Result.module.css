@@ -96,8 +96,21 @@
   margin-left: 2em;
 }
 
+.nolimitdieta {
+  margin: 3rem auto 0;
+  max-width: 50rem;
+  text-align: center;
+}
+
+.nolimitdieta a {
+  display: inline-block;
+  margin-top: 0.5em;
+}
+
 @media print {
-  .actionButtons {
+
+  .actionButtons,
+  .nolimitdieta {
     display: none;
   }
 }

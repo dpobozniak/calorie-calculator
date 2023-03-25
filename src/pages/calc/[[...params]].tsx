@@ -156,15 +156,16 @@ const Result: NextPage<
 
       <Bmr />
 
-      <p>
-        Przepisy na smaczne posiłki (śniadania, obiady, kolacje, przekąski) z
-        podziałem na różne zapotrzebowanie kaloryczne znajdziesz na platformie
-        NO LIMIT DIETA
-      </p>
-
-      {/* <Button external href="https://nolimitdieta.pl" color="#0C642D">
-        Przejdź na platformę NO LIMIT DIETA
-      </Button> */}
+      <div className={s.nolimitdieta}>
+        <p>
+          Przepisy na smaczne posiłki (śniadania, obiady, kolacje, przekąski) z
+          podziałem na różne zapotrzebowanie kaloryczne znajdziesz na platformie
+          NO LIMIT DIETA
+        </p>
+        <Button external href="https://nolimitdieta.pl" color="#209f4e">
+          NO LIMIT DIETA
+        </Button>
+      </div>
 
       <Bonus />
     </Layout>

@@ -179,7 +179,7 @@ const Bonus = () => (
     </p>
     <div className={s.ctaWrapper}>
       <Button href="https://nolimitplan.pl" external color="#9902AB">
-        Przejdź na stronę NOLIMITPLAN.pl
+        NOLIMITPLAN.pl
       </Button>
     </div>
   </section>
