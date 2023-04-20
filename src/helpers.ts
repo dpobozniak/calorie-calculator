@@ -10,15 +10,15 @@ export const calorieFormula = (
   // women: BMR = 655.1 + (9.563 * weight in kg) + (1.850 * height in cm) - (4.676 * age)
 
   let BMR = 0;
-  let targetWeight = weight + weight * target;
 
   if (gender === 'male') {
-    BMR = 66.5 + 13.75 * targetWeight + 5.003 * height - 6.75 * age;
+    BMR = 66.5 + 13.75 * weight + 5.003 * height - 6.75 * age;
   } else {
-    BMR = 655.1 + 9.563 * targetWeight + 1.85 * height - 4.676 * age;
+    BMR = 655.1 + 9.563 * weight + 1.85 * height - 4.676 * age;
   }
 
-  const totalCalories = Math.ceil(BMR * activity);
+  const calories = Math.ceil(BMR * activity);
+  const totalCalories = Math.ceil(calories - calories * target * -1);
   const proteinCalories = Math.ceil(totalCalories * nutritionRatio.protein);
   const carboCalories = Math.ceil(totalCalories * nutritionRatio.carbo);
   const fatCalories = Math.ceil(totalCalories * nutritionRatio.fat);

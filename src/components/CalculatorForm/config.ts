@@ -1,9 +1,8 @@
 export const activityOptions = [
-  { value: '1.20', label: 'Prawie brak' },
-  { value: '1.40', label: 'Lekka aktywność' },
+  { value: '1.40', label: 'Niska aktywność' },
   { value: '1.60', label: 'Umiarkowana aktywność' },
-  { value: '1.80', label: 'Duża aktywność' },
-  { value: '2.00', label: 'Bardzo duża aktywność' },
+  { value: '1.75', label: 'Aktywny tryb życia' },
+  { value: '2.00', label: 'Bardzo aktywny tryb życia' },
 ];
 
 export const genderOptions = [
@@ -13,8 +12,8 @@ export const genderOptions = [
 
 export const targetOptions = [
   { value: '0', label: 'Chcę utrzymać wagę' },
-  { value: '-0.1', label: 'Chcę schudnąć' },
-  { value: '0.1', label: 'Chcę przytyć' },
+  { value: '-0.20', label: 'Chcę schudnąć' }, // -20% of total calories
+  { value: '0.20', label: 'Chcę przytyć' }, // +20% of total calories
 ];
 
 export const nutritionRatio = {
