@@ -96,7 +96,7 @@ const Footer: FC = () => (
       </section>
       <div className={s.socials}>
         <a
-          href="https://www.instagram.com/nolimit_by_szczesna/"
+          href="https://www.instagram.com/no_limit_klaudia"
           target="_blank"
           rel="noopener noreferrer"
           className={s.social}

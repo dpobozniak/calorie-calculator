@@ -22,6 +22,7 @@
   border-radius: var(--input-radius);
   border: 0 none;
   color: #fff;
+  cursor: pointer;
   font-size: 1.2em;
   padding: 0.7em 0.9em;
 }
